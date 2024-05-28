@@ -73,7 +73,7 @@ public:
 
     ~DocList() {
         fstream file("E:\\Solved lab tasks\\DS\\dsaProj\\databaseNetwork.txt", std::ios::in | std::ios::out | std::ios::app);
-        string name, path;
+        string name, path, temp;
 
         if (!file.is_open()) {
             // File could not be opened, attempt to create a new file
@@ -84,10 +84,13 @@ public:
             }
         }
         for each (auto& d in docList) {
-            name = d->getName();
-            path = d->getFilePath();
-            file << name << endl;
-            file << path << endl;
+            temp = d->getName();
+            if (!getline(file, temp)) {
+                name = d->getName();
+                path = d->getFilePath();
+                file << name << endl;
+                file << path << endl;
+            }
         }
         file.close();
         docList.clear();

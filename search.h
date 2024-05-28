@@ -1,6 +1,6 @@
 #pragma once
 #include "searchResults.h"
-//#include "mdiProperties.cpp"
+
 
 namespace dsaProj {
 
@@ -20,7 +20,6 @@ namespace dsaProj {
 		search(void)
 		{
 			InitializeComponent();
-			//mdiProp();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -49,23 +48,6 @@ namespace dsaProj {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 		searchResults^ sr;
-		/*WindowsFormsApp10::mdiProperties^ mdi;
-
-		void mdiProp() {
-			mdi->SetBevel(this, false);
-			MdiClient^ client = nullptr;
-
-			for each (Control ^ control in this->Controls) {
-				client = dynamic_cast<MdiClient^>(control);
-				if (client != nullptr) {
-					break;
-				}
-			}
-
-			if (client != nullptr) {
-				client->BackColor = Color::FromArgb(255, 255, 255);
-			}
-		}*/
 
 #pragma region Windows Form Designer generated code
 		/// <summary>

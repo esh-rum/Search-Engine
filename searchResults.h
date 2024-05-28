@@ -1,5 +1,8 @@
 #pragma once
-#include "srDoc.h"
+
+namespace dsaProj {
+	ref class srDoc; // Forward declaration
+}
 
 namespace dsaProj {
 
@@ -10,24 +13,15 @@ namespace dsaProj {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Summary for searchResults
-	/// </summary>
 	public ref class searchResults : public System::Windows::Forms::Form
 	{
 	public:
 		searchResults(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~searchResults()
 		{
 			if (components)
@@ -35,26 +29,25 @@ namespace dsaProj {
 				delete components;
 			}
 		}
+
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::ListBox^ listBox1;
+	public: String^ sendResult();
 
 	protected:
 
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 		srDoc^ result;
 
+		String^ example = "example";
+		String^ example2 = "example2";
+		String^ resultSelected;
+
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -131,26 +124,17 @@ namespace dsaProj {
 	private: System::Void searchResults_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->ControlBox = false;
 
+		listBox1->Items->Add("1. " + example); // test
+		listBox1->Items->Add("2. " + example2); // test
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (result == nullptr) {
-			result = gcnew srDoc();
-			result->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &searchResults::result_FormClosed);
-			result->MdiParent = this->MdiParent;
-			result->StartPosition = FormStartPosition::Manual;
-			result->Location = Point(0, 0); // Set the desired starting position here
-			result->Width = this->Width;
-			result->Height = this->Height;
-			result->WindowState = FormWindowState::Maximized; // Scale to parent size
-			result->Show();
-		}
-		else {
-			result->Activate();
-		}
-		
-	}
-private: System::Void result_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
-	result = nullptr;
-}
-};
+
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void result_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e);
+
+	/*public: String^ sendResult() { return resultSelected; }*/
+
+	/*private: System::Void result_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+		result = nullptr;
+	}*/
+	};
 }

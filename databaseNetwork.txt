@@ -1,4 +1,4 @@
 example
 E:\\Solved lab tasks\\DS\\dsaProj\\example.txt
-example
-E:\\Solved lab tasks\\DS\\dsaProj\\example.txt
+example2
+E:\\Solved lab tasks\\DS\\dsaProj\\example2.txt

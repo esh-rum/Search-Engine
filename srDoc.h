@@ -1,8 +1,10 @@
 #pragma once
 #include "DocList.cpp"
 #include "Doc.cpp"
+#include "searchResults.h"
 #include <fstream>
 #include <string>
+#include <msclr/marshal_cppstd.h>
 
 namespace dsaProj {
 
@@ -19,12 +21,10 @@ namespace dsaProj {
 	public ref class srDoc : public System::Windows::Forms::Form
 	{
 	public:
-		srDoc(void)
+		srDoc(searchResults^ srForm)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			this->srForm = srForm; // Store the reference to searchResults form
 		}
 
 	protected:
@@ -39,6 +39,7 @@ namespace dsaProj {
 			}
 		}
 	private: System::Windows::Forms::TextBox^ textBox1;
+	private: searchResults^ srForm;
 	protected:
 
 	private:
@@ -48,6 +49,7 @@ namespace dsaProj {
 		System::ComponentModel::Container ^components;
 
 		DocList* docuList = new DocList();
+		searchResults^ sr; 		// test
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -90,7 +92,11 @@ namespace dsaProj {
 	private: System::Void srDoc_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->ControlBox = false;
 
-		Doc* doc1 = docuList->getDoc("example");
+		String^ temp = srForm->sendResult(); // Get the resultSelected from searchResults
+		//MessageBox::Show("Recieved the resultSelected." + temp);
+		std::string stdName = msclr::interop::marshal_as<std::string>(temp);
+
+		Doc* doc1 = docuList->getDoc(stdName);
 
 		if (doc1 != nullptr) {
 			std::string content = doc1->getContent();
@@ -99,6 +105,7 @@ namespace dsaProj {
 		else {
 			textBox1->Text = "Document not found.";
 		}
+	
 		//std::ifstream infile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
 		//if (infile.is_open()) {
 		//	std::string line;
