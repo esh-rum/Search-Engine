@@ -79,7 +79,7 @@ namespace dsaProj {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(890, 630);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textBox1); 
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
 			this->Name = L"srDoc";
 			this->Text = L"srDoc";

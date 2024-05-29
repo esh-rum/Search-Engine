@@ -20,6 +20,7 @@ public:
         string name, path;
         while (getline(file, name) && getline(file, path)) {
             Doc* doc = new Doc(name, path); // Assuming Doc has a constructor that accepts name and path
+            doc->processFile();
             docList.push_back(doc);
         }
         file.close();
@@ -72,27 +73,23 @@ public:
     }
 
     ~DocList() {
-        fstream file("E:\\Solved lab tasks\\DS\\dsaProj\\databaseNetwork.txt", std::ios::in | std::ios::out | std::ios::app);
-        string name, path, temp;
+        fstream file("E:\\Solved lab tasks\\DS\\dsaProj\\databaseNetwork.txt", ios::in | ios::out | ios::app);
+        string name, path;
 
         if (!file.is_open()) {
             // File could not be opened, attempt to create a new file
-            file.open("E:\\Solved lab tasks\\DS\\dsaProj\\databaseNetwork.txt", std::ios::out);
+            file.open("E:\\Solved lab tasks\\DS\\dsaProj\\databaseNetwork.txt", ios::in | ios::out | ios::app);
             if (!file) {
-                std::cerr << "Unable to create or open the file." << std::endl;
+                cerr << "Unable to create or open the file." << endl;
                 return;
             }
         }
-        for each (auto& d in docList) {
-            temp = d->getName();
-            if (!getline(file, temp)) {
-                name = d->getName();
-                path = d->getFilePath();
-                file << name << endl;
-                file << path << endl;
-            }
+        for (auto& d : docList) {
+            name = d->getName();
+            path = d->getFilePath();
+            file << name << endl;
+            file << path << endl;
         }
         file.close();
-        docList.clear();
     }
 };

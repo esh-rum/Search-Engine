@@ -192,6 +192,10 @@ namespace dsaProj {
 				System::Diagnostics::Debug::WriteLine("Document added to docuList.");
 
 				MessageBox::Show("Document added in the network!!");
+				Doc* temp = docuList->getDoc(stdName);
+				System::String^ temp2 = msclr::interop::marshal_as<System::String^>(temp->getName());
+				System::String^ temp3 = msclr::interop::marshal_as<System::String^>(temp->getFilePath());
+				MessageBox::Show("Document: " + temp2 + " | " + temp3);
 			}
 			else {
 				MessageBox::Show("Please enter both name and path.");
