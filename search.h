@@ -1,9 +1,12 @@
 #pragma once
-#include "searchResults.h"
+#include "Cache.cpp"
 #include <sstream>
 #include <string>
 #include <msclr/marshal_cppstd.h>
 
+namespace dsaProj {
+	ref class searchResults; // Forward declaration
+}
 
 namespace dsaProj {
 
@@ -50,6 +53,8 @@ namespace dsaProj {
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+		String^ resultDocs;
+		CacheTable* cache = new CacheTable();
 
 	private: System::Windows::Forms::Label^ label3;
 		   searchResults^ sr;
@@ -93,7 +98,7 @@ namespace dsaProj {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Courier New", 16.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(252, 261);
 			this->textBox1->Name = L"textBox1";
@@ -190,5 +195,9 @@ private: std::string isValidInput(const std::string& input);
 //		return 3; 
 //	}
 //}
+private: void setDocs(std::string cont) {
+	resultDocs = msclr::interop::marshal_as<System::String^>(cont);
+}
+public: String^ getDocs() { return resultDocs; }
 };
 }

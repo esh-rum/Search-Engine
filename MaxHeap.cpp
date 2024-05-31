@@ -69,7 +69,7 @@ public:
     string getDocNamesInOrder() const {
         stringstream ss;
         for (int i = 0; i < heapSize; i++) {
-            ss << i + 1 << ". " << heap[i].docName << "\n";
+            ss << i + 1 << ". " << heap[i].docName << "\r\n";
         }
         return ss.str();
     }

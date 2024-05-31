@@ -121,12 +121,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cache.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="Doc.cpp" />
     <ClCompile Include="DocList.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="history.cpp" />
+    <ClCompile Include="hyperLinkDoc.cpp" />
     <ClCompile Include="MaxHeap.cpp" />
     <ClCompile Include="mdiProperties.cpp" />
     <ClCompile Include="next.cpp" />
@@ -145,6 +147,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="history.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="hyperLinkDoc.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="mdiProperties.h" />
@@ -173,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="history.resx">
       <DependentUpon>history.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hyperLinkDoc.resx">
+      <DependentUpon>hyperLinkDoc.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="next.resx">
       <DependentUpon>next.h</DependentUpon>
