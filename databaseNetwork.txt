@@ -1,6 +1,20 @@
-example2
-E:\\Solved lab tasks\\DS\\dsaProj\\example2.txt
-example2
-E:\\Solved lab tasks\\DS\\dsaProj\\example2.txt
-example
-E:\\Solved lab tasks\\DS\\dsaProj\\example.txt
+artificial intelligence
+E:\Solved lab tasks\DS\dsaProj\dataPrototype\artificial intelligence.txt
+biotechnology
+E:\Solved lab tasks\DS\dsaProj\dataPrototype\biotechnology.txt
+climate change
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\climate change.txt
+cyber security
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\cyber security.txt
+education technology
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\education technology.txt
+electric vehicles
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\electric vehicles.txt
+mental health
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\mental health.txt
+renewable energy
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\renewable energy.txt
+space exploration
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\space exploration.txt
+sustainable agriculture
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\sustainable agriculture.txt

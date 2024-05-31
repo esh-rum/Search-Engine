@@ -1,5 +1,8 @@
 #pragma once
 #include "searchResults.h"
+#include <sstream>
+#include <string>
+#include <msclr/marshal_cppstd.h>
 
 
 namespace dsaProj {
@@ -47,7 +50,9 @@ namespace dsaProj {
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
-		searchResults^ sr;
+
+	private: System::Windows::Forms::Label^ label3;
+		   searchResults^ sr;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -59,6 +64,7 @@ namespace dsaProj {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -94,6 +100,17 @@ namespace dsaProj {
 			this->textBox1->Size = System::Drawing::Size(448, 39);
 			this->textBox1->TabIndex = 2;
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Courier New", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(319, 303);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(314, 17);
+			this->label3->TabIndex = 4;
+			this->label3->Text = L"Format: word1 / word1 AND/OR word2";
+			// 
 			// search
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -101,6 +118,7 @@ namespace dsaProj {
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(890, 630);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
@@ -117,24 +135,60 @@ namespace dsaProj {
 	private: System::Void search_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->ControlBox = false;
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (sr == nullptr) {
-			sr = gcnew searchResults();
-			sr->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &search::sr_FormClosed);
-			sr->MdiParent = this->MdiParent;
-			sr->StartPosition = FormStartPosition::Manual;
-			sr->Location = Point(0, 0); // Set the desired starting position here
-			sr->Width = this->Width;
-			sr->Height = this->Height;
-			sr->WindowState = FormWindowState::Maximized; // Scale to parent size
-			sr->Show();
-		}
-		else {
-			sr->Activate();
-		}
-	}
-private: System::Void sr_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
-	sr = nullptr;
-}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e); 
+//{
+	//	String^ ser = textBox1->Text;
+	//	std::string stdSer = msclr::interop::marshal_as<std::string>(ser);
+	//	int i = isValidInput(stdSer);
+	//	if (i == -1) {
+	//		MessageBox::Show("Search NOT Valid");
+	//	}
+	//	else {
+	//		MessageBox::Show("Search Valid");
+	//	}
+	//	if (sr == nullptr) {
+	//		sr = gcnew searchResults();
+	//		sr->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &search::sr_FormClosed);
+	//		sr->MdiParent = this->MdiParent;
+	//		sr->StartPosition = FormStartPosition::Manual;
+	//		sr->Location = Point(0, 0); // Set the desired starting position here
+	//		sr->Width = this->Width;
+	//		sr->Height = this->Height;
+	//		sr->WindowState = FormWindowState::Maximized; // Scale to parent size
+	//		sr->Show();
+	//	}
+	//	else {
+	//		sr->Activate();
+	//	}
+	//}
+private: System::Void sr_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e); 
+//{
+//	sr = nullptr;
+//}
+private: std::string isValidInput(const std::string& input);
+//{
+//	std::stringstream ss(input);
+//	std::string word1, word2, op;
+//
+//	// Extracting word1, word2, and operator
+//	ss >> word1;
+//	// If there's only one word, it's considered a valid input
+//	if (ss.fail() || ss.eof()) {
+//		return 1;
+//	}
+//
+//	ss >> op >> word2;
+//
+//	// Checking if the operator is either "AND" or "OR"
+//	if (op != "AND" && op != "OR") {
+//		return -1;
+//	}
+//	else if (op == "AND") {
+//		return 2;
+//	}
+//	else if (op == "OR") {
+//		return 3; 
+//	}
+//}
 };
 }

@@ -25,6 +25,11 @@ namespace dsaProj {
 		{
 			InitializeComponent();
 			this->srForm = srForm; // Store the reference to searchResults form
+
+			if (srForm == nullptr) {
+				MessageBox::Show("srForm is null");
+				return;
+			}
 		}
 
 	protected:
@@ -49,7 +54,6 @@ namespace dsaProj {
 		System::ComponentModel::Container ^components;
 
 		DocList* docuList = new DocList();
-		searchResults^ sr; 		// test
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -72,6 +76,7 @@ namespace dsaProj {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(890, 630);
 			this->textBox1->TabIndex = 0;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &srDoc::textBox1_TextChanged);
 			// 
 			// srDoc
 			// 
@@ -79,7 +84,7 @@ namespace dsaProj {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(890, 630);
-			this->Controls->Add(this->textBox1); 
+			this->Controls->Add(this->textBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
 			this->Name = L"srDoc";
 			this->Text = L"srDoc";
@@ -105,7 +110,7 @@ namespace dsaProj {
 		else {
 			textBox1->Text = "Document not found.";
 		}
-	
+
 		//std::ifstream infile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
 		//if (infile.is_open()) {
 		//	std::string line;
@@ -122,7 +127,6 @@ namespace dsaProj {
 		//		std::string defaultContent = "This is a new file created by the application.";
 		//		outfile << defaultContent << std::endl;
 		//		outfile.close();
-
 		//		// Now read the newly created file
 		//		std::ifstream newfile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
 		//		if (newfile.is_open()) {
@@ -139,5 +143,7 @@ namespace dsaProj {
 		//	}
 		//}
 	}
-	};
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

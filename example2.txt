@@ -1,8 +1,1 @@
-This is a sample text file for testing the WordCounter program.
-Words are separated by numbers, commas, dashes -- and other punctuation!
-The quick brown fox jumps over the lazy dog.
-This is a sample, sample line. Repeated words: testing, testing, program, program.
-WordCounter program calculates word frequencies effectively.
-Numbers like 123 and 456 are also present in the text.
-Apostrophes aren't considered as punctuation, it's part of a word like "isn't".
-Test the program with different cases, cases, and characters like this! Let's go!
+This is a sample text

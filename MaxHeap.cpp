@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 struct DocFreq {
@@ -59,4 +59,19 @@ public:
             cout << heap[i].docName << " - " << heap[i].frequency << endl;
         }
     }
+
+    bool isEmpty() {
+        if (heapSize == 0) {
+            return true;
+        }
+        return false;
+    }
+    string getDocNamesInOrder() const {
+        stringstream ss;
+        for (int i = 0; i < heapSize; i++) {
+            ss << i + 1 << ". " << heap[i].docName << "\n";
+        }
+        return ss.str();
+    }
 };
+

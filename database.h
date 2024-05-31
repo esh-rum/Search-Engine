@@ -63,7 +63,6 @@ namespace dsaProj {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -86,11 +85,11 @@ namespace dsaProj {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(331, 81);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(483, 31);
+			this->textBox1->Size = System::Drawing::Size(483, 30);
 			this->textBox1->TabIndex = 12;
 			// 
 			// button1
@@ -129,11 +128,11 @@ namespace dsaProj {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(331, 129);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(483, 31);
+			this->textBox2->Size = System::Drawing::Size(483, 30);
 			this->textBox2->TabIndex = 14;
 			// 
 			// database
@@ -195,7 +194,10 @@ namespace dsaProj {
 				Doc* temp = docuList->getDoc(stdName);
 				System::String^ temp2 = msclr::interop::marshal_as<System::String^>(temp->getName());
 				System::String^ temp3 = msclr::interop::marshal_as<System::String^>(temp->getFilePath());
-				MessageBox::Show("Document: " + temp2 + " | " + temp3);
+
+				textBox1->Clear();
+				textBox2->Clear();
+				//MessageBox::Show("Document: " + temp2 + " | " + temp3);
 			}
 			else {
 				MessageBox::Show("Please enter both name and path.");
