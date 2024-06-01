@@ -45,10 +45,6 @@ namespace dsaProj {
 			{
 				delete components;
 			}
-
-			delete docuList;
-			delete srForm;
-			//srForm = nullptr;
 		}
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: searchResults^ srForm;
@@ -171,40 +167,7 @@ namespace dsaProj {
 		std::string words = hyperGraph->getMentions(stdName);
 		System::String^ sysWords = msclr::interop::marshal_as<System::String^>(words);
 		textBox1->AppendText("\r\n" + "\r\n" + sysWords);
-
-		delete doc1;
-		delete hyperGraph; 
-		//std::ifstream infile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
-		//if (infile.is_open()) {
-		//	std::string line;
-		//	textBox1->Clear(); // Clear the textbox before loading new content
-		//	while (std::getline(infile, line)) {
-		//		textBox1->AppendText(gcnew String(line.c_str()) + "\r\n");
-		//	}
-		//	infile.close();
-		//}
-		//else {
-		//	MessageBox::Show("Unable to open file. Creating a new file.");
-		//	std::ofstream outfile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
-		//	if (outfile.is_open()) {
-		//		std::string defaultContent = "This is a new file created by the application.";
-		//		outfile << defaultContent << std::endl;
-		//		outfile.close();
-		//		// Now read the newly created file
-		//		std::ifstream newfile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
-		//		if (newfile.is_open()) {
-		//			std::string line;
-		//			textBox1->Clear(); // Clear the textbox before loading new content
-		//			while (std::getline(newfile, line)) {
-		//				textBox1->AppendText(gcnew String(line.c_str()) + "\r\n");
-		//			}
-		//			newfile.close();
-		//		}
-		//	}
-		//	else {
-		//		MessageBox::Show("Failed to create the file.");
-		//	}
-		//}
+ 
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}

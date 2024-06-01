@@ -21,8 +21,6 @@ System::Void search::button1_Click(System::Object^ sender, System::EventArgs^ e)
 		MessageBox::Show("Search NOT Valid");
 	}
 
-	//System::String^ sysStr = msclr::interop::marshal_as<System::String^>(data);
-	//MessageBox::Show(sysStr);
 
 	textBox1->Clear();
 
@@ -67,7 +65,6 @@ std::string search::isValidInput(const std::string& input) {
 		content = mh.getDocNamesInOrder();
 		MessageBox::Show("Cache if");
 		setDocs(content);
-		delete docuList;
 		return content;
 	}
 	else {
@@ -83,7 +80,6 @@ std::string search::isValidInput(const std::string& input) {
 			content = mh.getDocNamesInOrder();
 			cache->put(input, mh);
 			setDocs(content);
-			delete docuList;
 			return content;
 		}
 
@@ -101,7 +97,6 @@ std::string search::isValidInput(const std::string& input) {
 			content = mh.getDocNamesInOrder();
 			cache->put(input, mh);
 			setDocs(content);
-			delete docuList;
 			return content;
 		}
 		else if (op == "OR") {
@@ -109,9 +104,7 @@ std::string search::isValidInput(const std::string& input) {
 			content = mh.getDocNamesInOrder();
 			cache->put(input, mh);
 			setDocs(content);
-			delete docuList;
 			return content;
 		}
 	}
-	delete docuList; 
 }

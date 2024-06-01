@@ -30,9 +30,7 @@ namespace dsaProj {
 			if (components)
 			{
 				delete components;
-			}
-			delete serDocs;
-			//serDocs = nullptr; 
+			} 
 		}
 
 	private: System::Windows::Forms::Label^ label1;
@@ -148,11 +146,5 @@ namespace dsaProj {
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void result_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e);
-
-	/*public: String^ sendResult() { return resultSelected; }*/
-
-	/*private: System::Void result_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
-		result = nullptr;
-	}*/
 	};
 }

@@ -32,7 +32,4 @@ System::Void hyperLinkDoc::button1_Click(System::Object^ sender, System::EventAr
 	textBox1->AppendText("\r\n" + "\r\n" + sysWords);
 
 	textBox2->Clear();
-
-	delete doc1;
-	delete hyperGraph;
 }

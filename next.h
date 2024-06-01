@@ -37,8 +37,6 @@ namespace dsaProj {
 			{
 				delete components;
 			}
-
-			delete docuList;
 		}
 
 	protected:
@@ -117,7 +115,6 @@ namespace dsaProj {
 			textBox1->Text = "Document not found.";
 		}
 
-		delete doc1;
 	}
 	};
 }

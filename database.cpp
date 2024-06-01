@@ -39,8 +39,6 @@ System::Void database::button1_Click(System::Object^ sender, System::EventArgs^ 
 			textBox1->Clear();
 			textBox2->Clear();
 
-			delete doc1; 
-			//MessageBox::Show("Document: " + temp2 + " | " + temp3);
 		}
 		else {
 			MessageBox::Show("Please enter both name and path.");
@@ -87,5 +85,4 @@ System::Void database::button2_Click(System::Object^ sender, System::EventArgs^ 
 	textBox3->Clear();
 	textBox4->Clear();
 
-	delete shortPathGraph; 
 }

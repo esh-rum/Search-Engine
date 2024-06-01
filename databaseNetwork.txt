@@ -50,8 +50,8 @@ history
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\history.txt
 psychology
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\psychology.txt
-history
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\history.txt
+nutrition
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\nutrition.txt
 anthropology
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\anthropology.txt
 philosophy

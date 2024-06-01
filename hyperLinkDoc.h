@@ -36,8 +36,6 @@ namespace dsaProj {
 			{
 				delete components;
 			}
-			delete docuList; 
-			delete sr;
 		}
 	private: System::Windows::Forms::TextBox^ textBox1;
 	protected:
@@ -156,8 +154,6 @@ namespace dsaProj {
 		System::String^ sysWords = msclr::interop::marshal_as<System::String^>(words);
 		textBox1->AppendText("\r\n" + "\r\n" + sysWords);
 
-		delete doc1; 
-		delete hyperGraph; 
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 };
