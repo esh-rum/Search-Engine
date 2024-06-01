@@ -34,10 +34,11 @@ namespace dsaProj {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::ListBox^ listBox1;
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ textBox2;
 	protected:
 
 	protected:
@@ -58,26 +59,11 @@ namespace dsaProj {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
-			// 
-			// listBox1
-			// 
-			this->listBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->listBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->listBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 23;
-			this->listBox1->Location = System::Drawing::Point(0, 0);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(890, 485);
-			this->listBox1->TabIndex = 0;
-			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &history::listBox1_SelectedIndexChanged);
 			// 
 			// textBox1
 			// 
@@ -110,16 +96,25 @@ namespace dsaProj {
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"Enter history number:";
 			// 
+			// textBox2
+			// 
+			this->textBox2->Dock = System::Windows::Forms::DockStyle::Top;
+			this->textBox2->Location = System::Drawing::Point(0, 0);
+			this->textBox2->Multiline = true;
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(890, 483);
+			this->textBox2->TabIndex = 6;
+			// 
 			// history
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(890, 630);
+			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->listBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
 			this->Name = L"history";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;

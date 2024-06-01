@@ -56,7 +56,7 @@ public:
         for (const auto& pair : adjList) {
             cout << pair.first << " mentions: ";
             for (const auto& neighbor : pair.second) {
-                cout << neighbor << " ";
+                cout << neighbor << ", ";
             }
             cout << endl;
         }
@@ -110,7 +110,7 @@ public:
         ss << docName << " mentions: ";
         if (it != adjList.end()) {
             for (const auto& mention : it->second) {
-                ss << mention << " ";
+                ss << mention << ", ";
             }
         }
         else {

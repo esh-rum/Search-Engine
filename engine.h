@@ -483,7 +483,19 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 		data->Show();
 	}
 	else {
-		data->Activate();
+		//data->Activate();
+		data->Close();
+		data = nullptr;
+
+		data = gcnew database();
+		data->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &engine::data_FormClosed);
+		data->MdiParent = this;
+		data->StartPosition = FormStartPosition::Manual;
+		data->Location = Point(0, 0); // Set the desired starting position here
+		data->Width = this->Width - sidebar->Width;
+		data->Height = this->Height - panel1->Height;
+		data->WindowState = FormWindowState::Maximized; // Scale to parent size
+		data->Show();
 	}
 }
 private: System::Void data_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {

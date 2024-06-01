@@ -69,10 +69,14 @@ System::Void database::button2_Click(System::Object^ sender, System::EventArgs^ 
 	std::string stdEnd = msclr::interop::marshal_as<std::string>(docEnd);
 
 	DocGraph* shortPathGraph = new DocGraph();
+	shortPathGraph->buildGraph();
 
 	std::string path = shortPathGraph->findShortestPath(stdStart, stdEnd);
 
 	System::String^ sysPath = msclr::interop::marshal_as<System::String^>(path);
 
 	textBox5->AppendText("SHORTEST PATH: " + "\r\n" + sysPath);
+
+	textBox3->Clear();
+	textBox4->Clear();
 }

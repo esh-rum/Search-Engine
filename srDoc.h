@@ -161,6 +161,7 @@ namespace dsaProj {
 		}
 
 		DocGraph* hyperGraph = new DocGraph();
+		hyperGraph->buildGraph();
 		std::string words = hyperGraph->getMentions(stdName);
 		System::String^ sysWords = msclr::interop::marshal_as<System::String^>(words);
 		textBox1->AppendText("\r\n" + "\r\n" + sysWords);
