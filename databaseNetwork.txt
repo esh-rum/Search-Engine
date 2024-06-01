@@ -46,8 +46,8 @@ marine
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\marine.txt
 archaeology
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\archaeology.txt
-nutrition
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\nutrition.txt
+history
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\history.txt
 psychology
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\psychology.txt
 history
@@ -98,3 +98,5 @@ travel
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\travel.txt
 writing
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\writing.txt
+
+
