@@ -124,10 +124,12 @@
     <ClCompile Include="Cache.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="Doc.cpp" />
+    <ClCompile Include="DocGraph.cpp" />
     <ClCompile Include="DocList.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="history.cpp" />
+    <ClCompile Include="HistoryBackend.cpp" />
     <ClCompile Include="hyperLinkDoc.cpp" />
     <ClCompile Include="MaxHeap.cpp" />
     <ClCompile Include="mdiProperties.cpp" />

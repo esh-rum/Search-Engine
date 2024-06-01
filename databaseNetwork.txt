@@ -1,20 +1,38 @@
-artificial intelligence
-E:\Solved lab tasks\DS\dsaProj\dataPrototype\artificial intelligence.txt
+ai
+E:\Solved lab tasks\DS\dsaProj\dataPrototype\ai.txt
 biotechnology
 E:\Solved lab tasks\DS\dsaProj\dataPrototype\biotechnology.txt
-climate change
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\climate change.txt
-cyber security
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\cyber security.txt
-education technology
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\education technology.txt
-electric vehicles
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\electric vehicles.txt
-mental health
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\mental health.txt
-renewable energy
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\renewable energy.txt
-space exploration
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\space exploration.txt
-sustainable agriculture
-E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\sustainable agriculture.txt
+climate
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\climate.txt
+security
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\security.txt
+education
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\education.txt
+vehicles
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\vehicles.txt
+mental
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\mental.txt
+energy
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\energy.txt
+space
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\space.txt
+agriculture
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\agriculture.txt
+robotics
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\robotics.txt
+development
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\development.txt
+global
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\global.txt
+sustainability
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\sustainability.txt
+biodiversity
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\biodiversity.txt
+justice
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\justice.txt
+diversity
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\diversity.txt
+healthcare
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\healthcare.txt
+urbanization
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\urbanization.txt

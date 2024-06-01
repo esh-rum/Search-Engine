@@ -1,4 +1,4 @@
-Data Protection
+Security
 
 In an increasingly digital world, cybersecurity has become a critical concern for individuals, businesses, and governments. Cyberattacks, such as hacking, phishing, and ransomware, pose significant risks to personal data, financial information, and national security. Protecting sensitive information and maintaining the integrity of digital systems are paramount in preventing data breaches and cyber threats.
 

@@ -1,4 +1,4 @@
-AI Revolution
+AI
 
 Artificial Intelligence (AI) has been transforming various industries by enhancing efficiency and productivity. From healthcare to finance, AI applications have streamlined processes, reduced human error, and offered new insights through data analysis. AI algorithms, particularly in machine learning, are capable of learning from vast amounts of data, making predictions, and automating tasks that were previously thought to require human intelligence.
 

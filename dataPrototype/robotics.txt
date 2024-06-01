@@ -1,0 +1,5 @@
+Robotics
+
+Robotics is the interdisciplinary field that involves designing, building, and programming robots to perform tasks autonomously or semi-autonomously. From manufacturing to healthcare to exploration, robots are used in diverse industries to increase efficiency, improve safety, and extend human capabilities. Robotics combines elements of mechanical engineering, electrical engineering, computer science, and artificial intelligence to create machines that can sense, perceive, and interact with their environment. 
+
+As technology advances, robots are becoming more sophisticated, with capabilities ranging from simple repetitive actions to complex decision-making and learning. From industrial robots assembling cars on factory floors to robotic surgeons performing delicate procedures, the applications of robotics continue to expand, shaping the future of work and society.

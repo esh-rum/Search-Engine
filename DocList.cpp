@@ -107,6 +107,14 @@ public:
             cout << "Filepath: " << doc->getFilePath() << endl;
         }
     }
+    
+    string getDocNamesAsString() const {
+        stringstream ss;
+        for (const auto& doc : docList) {
+            ss << doc->getName() << "\n";
+        }
+        return ss.str();
+    }
 
     ~DocList() {
         fstream file("E:\\Solved lab tasks\\DS\\dsaProj\\databaseNetwork.txt", ios::in | ios::out);
@@ -120,8 +128,6 @@ public:
                 return;
             }
         }
-
-
 
         for (auto& d : docList) {
             name = d->getName();

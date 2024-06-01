@@ -1,10 +1,16 @@
 #pragma once
 #include "DocList.cpp"
 #include "Doc.cpp"
+#include "DocGraph.cpp"
 #include "searchResults.h"
 #include <fstream>
 #include <string>
 #include <msclr/marshal_cppstd.h>
+
+
+namespace dsaProj {
+	ref class hyperLinkDoc; // Forward declaration
+}
 
 namespace dsaProj {
 
@@ -45,6 +51,7 @@ namespace dsaProj {
 		}
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: searchResults^ srForm;
+	private: hyperLinkDoc^ hyperDoc;
 	protected:
 
 	private:
@@ -57,6 +64,7 @@ namespace dsaProj {
 	private: System::Windows::Forms::Button^ button1;
 
 		DocList* docuList = new DocList();
+		String^ hyperWord;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -152,6 +160,11 @@ namespace dsaProj {
 			textBox1->Text = "Document not found.";
 		}
 
+		DocGraph* hyperGraph = new DocGraph();
+		std::string words = hyperGraph->getMentions(stdName);
+		System::String^ sysWords = msclr::interop::marshal_as<System::String^>(words);
+		textBox1->AppendText("\r\n" + "\r\n" + sysWords);
+
 		//std::ifstream infile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
 		//if (infile.is_open()) {
 		//	std::string line;
@@ -186,7 +199,8 @@ namespace dsaProj {
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void hyperDoc_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e);
+	public: String^ getHyperWord();
 };
 }
