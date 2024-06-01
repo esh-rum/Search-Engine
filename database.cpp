@@ -1,4 +1,5 @@
 #include "database.h"
+#include "DocGraph.cpp"
 
 using namespace dsaProj;
 
@@ -58,4 +59,20 @@ System::Void database::button1_Click(System::Object^ sender, System::EventArgs^ 
 	}
 
 	System::Diagnostics::Debug::WriteLine("button1_Click completed.");
+}
+
+System::Void database::button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ docStart = textBox4->Text;
+	String^ docEnd = textBox3->Text;
+
+	std::string stdStart = msclr::interop::marshal_as<std::string>(docStart);
+	std::string stdEnd = msclr::interop::marshal_as<std::string>(docEnd);
+
+	DocGraph* shortPathGraph = new DocGraph();
+
+	std::string path = shortPathGraph->findShortestPath(stdStart, stdEnd);
+
+	System::String^ sysPath = msclr::interop::marshal_as<System::String^>(path);
+
+	textBox5->AppendText("SHORTEST PATH: " + "\r\n" + sysPath);
 }

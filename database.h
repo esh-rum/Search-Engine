@@ -50,7 +50,14 @@ namespace dsaProj {
 	protected:
 
 	private:
-		/// <summary>
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ textBox5;
+		   /// <summary>
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container^ components;
@@ -69,6 +76,13 @@ namespace dsaProj {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -136,12 +150,93 @@ namespace dsaProj {
 			this->textBox2->Size = System::Drawing::Size(483, 30);
 			this->textBox2->TabIndex = 14;
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(60, 350);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(244, 23);
+			this->label4->TabIndex = 21;
+			this->label4->Text = L"Enter ending document:";
+			// 
+			// textBox3
+			// 
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox3->Location = System::Drawing::Point(331, 347);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(483, 30);
+			this->textBox3->TabIndex = 20;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(51, 300);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(253, 23);
+			this->label5->TabIndex = 19;
+			this->label5->Text = L"Enter starting document:";
+			// 
+			// textBox4
+			// 
+			this->textBox4->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox4->Location = System::Drawing::Point(331, 299);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(483, 30);
+			this->textBox4->TabIndex = 18;
+			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(331, 399);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(133, 34);
+			this->button2->TabIndex = 17;
+			this->button2->Text = L"Find";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &database::button2_Click);
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(297, 257);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(385, 23);
+			this->label6->TabIndex = 16;
+			this->label6->Text = L"Shortest path between two documents";
+			// 
+			// textBox5
+			// 
+			this->textBox5->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->textBox5->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox5->Location = System::Drawing::Point(0, 456);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(890, 174);
+			this->textBox5->TabIndex = 22;
+			// 
 			// database
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(890, 630);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label2);
@@ -213,5 +308,6 @@ namespace dsaProj {
 	
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
