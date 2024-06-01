@@ -426,7 +426,18 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		prev->Show();
 	}
 	else {
-		prev->Activate();
+		//prev->Activate();
+		prev->Close();
+		prev = nullptr;
+		prev = gcnew previous();
+		prev->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &engine::prev_FormClosed);
+		prev->MdiParent = this;
+		prev->StartPosition = FormStartPosition::Manual;
+		prev->Location = Point(0, 0); // Set the desired starting position here
+		prev->Width = this->Width - sidebar->Width;
+		prev->Height = this->Height - panel1->Height;
+		prev->WindowState = FormWindowState::Maximized; // Scale to parent size
+		prev->Show();
 	}
 }
 private: System::Void prev_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
@@ -445,7 +456,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		nex->Show();
 	}
 	else {
-		nex->Activate();
+		//nex->Activate();
+		nex->Close();
+		nex = nullptr;
+		nex = gcnew next();
+		nex->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &engine::nex_FormClosed);
+		nex->MdiParent = this;
+		nex->StartPosition = FormStartPosition::Manual;
+		nex->Location = Point(0, 0); // Set the desired starting position here
+		nex->Width = this->Width - sidebar->Width;
+		nex->Height = this->Height - panel1->Height;
+		nex->WindowState = FormWindowState::Maximized; // Scale to parent size
+		nex->Show();
 	}
 }
 private: System::Void nex_FormClosed(System::Object ^ sender, System::Windows::Forms::FormClosedEventArgs ^ e) {
@@ -464,7 +486,18 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		hist->Show();
 	}
 	else {
-		hist->Activate();
+		//hist->Activate();
+		hist->Close();
+		hist = nullptr;
+		hist = gcnew history();
+		hist->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &engine::hist_FormClosed);
+		hist->MdiParent = this;
+		hist->StartPosition = FormStartPosition::Manual;
+		hist->Location = Point(0, 0); // Set the desired starting position here
+		hist->Width = this->Width - sidebar->Width;
+		hist->Height = this->Height - panel1->Height;
+		hist->WindowState = FormWindowState::Maximized; // Scale to parent size
+		hist->Show();
 	}
 }
 private: System::Void hist_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {

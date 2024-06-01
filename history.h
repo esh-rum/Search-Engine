@@ -1,4 +1,6 @@
 #pragma once
+#include "HistoryBackend.cpp"
+#include <msclr/marshal_cppstd.h>
 
 namespace dsaProj {
 
@@ -35,9 +37,9 @@ namespace dsaProj {
 			}
 		}
 
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Label^ label1;
+
+
+
 	private: System::Windows::Forms::TextBox^ textBox2;
 	protected:
 
@@ -52,6 +54,9 @@ namespace dsaProj {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
+
+		   History& hist = History::getInstance("first");
+
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -59,50 +64,18 @@ namespace dsaProj {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
-			// textBox1
-			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(285, 507);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(391, 31);
-			this->textBox1->TabIndex = 4;
-			// 
-			// button1
-			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(673, 506);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(133, 34);
-			this->button1->TabIndex = 3;
-			this->button1->Text = L"Search";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(38, 512);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(222, 23);
-			this->label1->TabIndex = 5;
-			this->label1->Text = L"Enter history number:";
-			// 
 			// textBox2
 			// 
-			this->textBox2->Dock = System::Windows::Forms::DockStyle::Top;
+			this->textBox2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(0, 0);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(890, 483);
+			this->textBox2->Size = System::Drawing::Size(890, 630);
 			this->textBox2->TabIndex = 6;
 			// 
 			// history
@@ -112,9 +85,6 @@ namespace dsaProj {
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(890, 630);
 			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
 			this->Name = L"history";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
@@ -127,8 +97,11 @@ namespace dsaProj {
 #pragma endregion
 	private: System::Void history_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->ControlBox = false;
-	}
-	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+
+		std::string histo = hist.getDocNamesAsString();
+
+		System::String^ sysHisto = msclr::interop::marshal_as<System::String^>(histo);
+		textBox2->AppendText(sysHisto + "\r\n");
 	}
 };
 }

@@ -2,7 +2,10 @@
 #include <iostream>
 #include <list>
 #include <stdexcept>
-#include "Doc.cpp"
+#include <sstream>
+#include <string>
+#include <unordered_map>
+#include <memory>
 
 using namespace std;
 
@@ -10,11 +13,22 @@ class History {
 private:
     list<string> data; // Store document names as strings
 
+    // Private copy constructor and assignment operator to prevent copies
+    History(const History&) = delete;
+    History& operator=(const History&) = delete;
+
 public:
     History() {}
-
     ~History() {
         clear(); // Ensure all data is cleared
+    }
+    // Public method to get a named instance (Multiton pattern)
+    static History& getInstance(const string& key) {
+        static unordered_map<string, unique_ptr<History>> instances;
+        if (instances.find(key) == instances.end()) {
+            instances[key] = make_unique<History>();
+        }
+        return *instances[key];
     }
 
     void push(const string& docName) {
@@ -72,35 +86,13 @@ public:
         advance(it, pos);
         data.erase(it);
     }
+
+    string getDocNamesAsString() const {
+        stringstream ss;
+        int count = 1;
+        for (const auto& string : data) {
+            ss << count++ << ". " << string << "\r\n";
+        }
+        return ss.str();
+    }
 };
-/*int main() {
-    History history;
-
-    Doc doc1("sample", "C:\\Users\\noora\\Downloads\\i221868_assignment4\\i221868_assignment4\\test.txt");
-    Doc doc2("program", "C:\\Users\\noora\\Downloads\\texts\\program.txt");
-    Doc doc3("working", "C:\\Users\\noora\\Downloads\\texts\\Creative Writing.txt");
-    doc1.processFile();
-    doc2.processFile();
-    doc3.processFile();
-
-    history.push(doc1);
-    history.push(doc2);
-    history.push(doc3);
-
-    history.traverse();
-
-    cout << "Top document: " << history.top().getName() << endl;
-
-    history.pop();
-
-    history.traverse();
-
-    cout << "Size of history: " << history.size() << endl;
-
-    history.clear();
-    cout << "History cleared." << endl;
-
-    cout << "Size of history after clearing: " << history.size() << endl;
-
-    return 0;
-}*/

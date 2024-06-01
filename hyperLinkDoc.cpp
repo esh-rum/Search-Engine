@@ -1,4 +1,5 @@
 #include "hyperLinkDoc.h"
+#include "HistoryBackend.cpp"
 
 using namespace dsaProj;
 
@@ -18,6 +19,8 @@ System::Void hyperLinkDoc::button1_Click(System::Object^ sender, System::EventAr
 	else {
 		textBox1->Text = "Document not found.";
 	}
+
+	hist.push(stdName);
 
 	DocGraph* hyperGraph = new DocGraph();
 	hyperGraph->buildGraph();

@@ -2,6 +2,7 @@
 
 #include "srDoc.h"
 #include "DocGraph.cpp"
+#include "HistoryBackend.cpp"
 
 namespace dsaProj {
 
@@ -50,6 +51,7 @@ namespace dsaProj {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button1;
 		   DocList* docuList = new DocList();
+		   History& hist = History::getInstance("first");
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -129,8 +131,7 @@ namespace dsaProj {
 	private: System::Void hyperLinkDoc_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->ControlBox = false;
 
-		String^ temp = sr->getHyperWord(); // Get the resultSelected from searchResults
-		//MessageBox::Show("Recieved the resultSelected." + temp);
+		String^ temp = sr->getHyperWord(); 
 		std::string stdName = msclr::interop::marshal_as<std::string>(temp); 
 
 		Doc* doc1 = docuList->getDoc(stdName); 
@@ -142,6 +143,9 @@ namespace dsaProj {
 		else {
 			textBox1->Text = "Document not found.";
 		}
+
+		hist.push(stdName);
+
 		DocGraph* hyperGraph = new DocGraph();
 		hyperGraph->buildGraph();
 		std::string words = hyperGraph->getMentions(stdName);

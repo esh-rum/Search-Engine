@@ -2,6 +2,7 @@
 #include "DocList.cpp"
 #include "Doc.cpp"
 #include "DocGraph.cpp"
+#include "HistoryBackend.cpp"
 #include "searchResults.h"
 #include <fstream>
 #include <string>
@@ -32,10 +33,6 @@ namespace dsaProj {
 			InitializeComponent();
 			this->srForm = srForm; // Store the reference to searchResults form
 
-			if (srForm == nullptr) {
-				MessageBox::Show("srForm is null");
-				return;
-			}
 		}
 
 	protected:
@@ -48,6 +45,7 @@ namespace dsaProj {
 			{
 				delete components;
 			}
+			
 		}
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: searchResults^ srForm;
@@ -65,6 +63,7 @@ namespace dsaProj {
 
 		DocList* docuList = new DocList();
 		String^ hyperWord;
+		History& hist = History::getInstance("first");
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -159,6 +158,8 @@ namespace dsaProj {
 		else {
 			textBox1->Text = "Document not found.";
 		}
+
+		hist.push(stdName);  
 
 		DocGraph* hyperGraph = new DocGraph();
 		hyperGraph->buildGraph();
