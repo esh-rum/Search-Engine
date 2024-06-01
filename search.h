@@ -41,6 +41,12 @@ namespace dsaProj {
 			{
 				delete components;
 			}
+
+			if (cache)
+			{
+				delete cache;
+				cache = nullptr;
+			}
 		}
 
 	private: System::Windows::Forms::Button^ button1;

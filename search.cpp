@@ -9,6 +9,10 @@ using namespace dsaProj;
 
 System::Void search::button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ ser = textBox1->Text;
+	if (String::IsNullOrWhiteSpace(ser)) {
+		MessageBox::Show("Search Empty!");
+		return;
+	}
 	std::string stdSer = msclr::interop::marshal_as<std::string>(ser);
 
 	string data = isValidInput(stdSer);
@@ -63,6 +67,7 @@ std::string search::isValidInput(const std::string& input) {
 		content = mh.getDocNamesInOrder();
 		MessageBox::Show("Cache if");
 		setDocs(content);
+		delete docuList;
 		return content;
 	}
 	else {
@@ -78,6 +83,7 @@ std::string search::isValidInput(const std::string& input) {
 			content = mh.getDocNamesInOrder();
 			cache->put(input, mh);
 			setDocs(content);
+			delete docuList;
 			return content;
 		}
 
@@ -87,6 +93,7 @@ std::string search::isValidInput(const std::string& input) {
 
 		// Checking if the operator is either "AND" or "OR"
 		if (op != "AND" && op != "OR") {
+			delete docuList;
 			return "-1";
 		}
 		else if (op == "AND") {
@@ -94,6 +101,7 @@ std::string search::isValidInput(const std::string& input) {
 			content = mh.getDocNamesInOrder();
 			cache->put(input, mh);
 			setDocs(content);
+			delete docuList;
 			return content;
 		}
 		else if (op == "OR") {
@@ -101,8 +109,9 @@ std::string search::isValidInput(const std::string& input) {
 			content = mh.getDocNamesInOrder();
 			cache->put(input, mh);
 			setDocs(content);
+			delete docuList;
 			return content;
 		}
 	}
-	delete docuList;
+	delete docuList; 
 }

@@ -6,6 +6,10 @@ using namespace dsaProj;
 
 System::Void srDoc::button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	hyperWord = textBox2->Text;
+	if (String::IsNullOrWhiteSpace(hyperWord)) {
+		MessageBox::Show("Empty! Type the document name!");
+		return;
+	}
 	textBox2->Clear();
 	if (hyperDoc == nullptr) {
 		hyperDoc = gcnew hyperLinkDoc(this); // Pass the current instance of searchhyperDocs to srDoc

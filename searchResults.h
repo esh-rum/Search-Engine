@@ -31,6 +31,8 @@ namespace dsaProj {
 			{
 				delete components;
 			}
+			delete serDocs;
+			//serDocs = nullptr; 
 		}
 
 	private: System::Windows::Forms::Label^ label1;
@@ -100,12 +102,14 @@ namespace dsaProj {
 			// 
 			// textBox2
 			// 
+			this->textBox2->BackColor = System::Drawing::Color::White;
 			this->textBox2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Courier New", 13.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(0, 0);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->ReadOnly = true;
 			this->textBox2->Size = System::Drawing::Size(890, 485);
 			this->textBox2->TabIndex = 10;
 			// 

@@ -5,6 +5,10 @@ using namespace dsaProj;
 
 System::Void searchResults::button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	resultSelected = textBox1->Text;
+	if (String::IsNullOrWhiteSpace(resultSelected)) {
+		MessageBox::Show("Empty! Enter result of choice!");
+		return;
+	}
 	textBox1->Clear();
 	if (result == nullptr) {
 		//MessageBox::Show("1");

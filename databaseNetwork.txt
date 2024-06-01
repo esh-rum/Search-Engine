@@ -36,3 +36,65 @@ healthcare
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\healthcare.txt
 urbanization
 E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\urbanization.txt
+sociology
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\sociology.txt
+astronomy
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\astronomy.txt
+politic
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\politic.txt
+marine
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\marine.txt
+archaeology
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\archaeology.txt
+nutrition
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\nutrition.txt
+psychology
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\psychology.txt
+history
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\history.txt
+anthropology
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\anthropology.txt
+philosophy
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\philosophy.txt
+economics
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\economics.txt
+literature
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\literature.txt
+architecture
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\architecture.txt
+art
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\art.txt
+cinema
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\cinema.txt
+comedy
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\comedy.txt
+cuisine
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\cuisine.txt
+dance
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\dance.txt
+fashion
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\fashion.txt
+gaming
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\gaming.txt
+gardening
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\gardening.txt
+geology
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\geology.txt
+mindfulness
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\mindfulness.txt
+music
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\music.txt
+mythology
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\mythology.txt
+photography
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\photography.txt
+poetry
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\poetry.txt
+sports
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\sports.txt
+theater
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\theater.txt
+travel
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\travel.txt
+writing
+E:\\Solved lab tasks\\DS\\dsaProj\\dataPrototype\\writing.txt

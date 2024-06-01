@@ -37,6 +37,8 @@ namespace dsaProj {
 			{
 				delete components;
 			}
+
+			delete docuList;
 		}
 
 	protected:
@@ -63,12 +65,14 @@ namespace dsaProj {
 			// 
 			// textBox1
 			// 
+			this->textBox1->BackColor = System::Drawing::Color::White;
 			this->textBox1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(0, 0);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
+			this->textBox1->ReadOnly = true;
 			this->textBox1->Size = System::Drawing::Size(890, 630);
 			this->textBox1->TabIndex = 0;
 			// 
@@ -92,7 +96,12 @@ namespace dsaProj {
 	private: System::Void next_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->ControlBox = false;
 
+		if (histNext.isEmpty()) {
+			textBox1->AppendText("Nothing in next at the moment!"); 
+			return;
+		}
 		std::string temp = histNext.top();
+		
 		hist.push(temp);
 		histNext.pop();
 
@@ -107,6 +116,8 @@ namespace dsaProj {
 		else {
 			textBox1->Text = "Document not found.";
 		}
+
+		delete doc1;
 	}
 	};
 }

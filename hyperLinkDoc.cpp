@@ -6,8 +6,11 @@ using namespace dsaProj;
 System::Void hyperLinkDoc::button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	textBox1->Clear();
 	
-	String^ temp = textBox2->Text; // Get the resultSelected from searchResults
-	//MessageBox::Show("Recieved the resultSelected." + temp);
+	String^ temp = textBox2->Text; 
+	if (String::IsNullOrWhiteSpace(temp)) {
+		MessageBox::Show("Empty! Type the document name!");
+		return;
+	}
 	std::string stdName = msclr::interop::marshal_as<std::string>(temp);
 
 	Doc* doc1 = docuList->getDoc(stdName);
@@ -29,4 +32,7 @@ System::Void hyperLinkDoc::button1_Click(System::Object^ sender, System::EventAr
 	textBox1->AppendText("\r\n" + "\r\n" + sysWords);
 
 	textBox2->Clear();
+
+	delete doc1;
+	delete hyperGraph;
 }

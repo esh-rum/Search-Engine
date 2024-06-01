@@ -215,12 +215,14 @@ namespace dsaProj {
 			// 
 			// textBox5
 			// 
+			this->textBox5->BackColor = System::Drawing::Color::White;
 			this->textBox5->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->textBox5->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox5->Location = System::Drawing::Point(0, 456);
 			this->textBox5->Multiline = true;
 			this->textBox5->Name = L"textBox5";
+			this->textBox5->ReadOnly = true;
 			this->textBox5->Size = System::Drawing::Size(890, 174);
 			this->textBox5->TabIndex = 22;
 			// 

@@ -69,12 +69,14 @@ namespace dsaProj {
 			// 
 			// textBox2
 			// 
+			this->textBox2->BackColor = System::Drawing::Color::White;
 			this->textBox2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(0, 0);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->ReadOnly = true;
 			this->textBox2->Size = System::Drawing::Size(890, 630);
 			this->textBox2->TabIndex = 6;
 			// 
@@ -99,9 +101,13 @@ namespace dsaProj {
 		this->ControlBox = false;
 
 		std::string histo = hist.getDocNamesAsString();
+		if (histo.empty()) {
+			textBox2->AppendText("No History at the moment!");
+			return;
+		}
 
 		System::String^ sysHisto = msclr::interop::marshal_as<System::String^>(histo);
-		textBox2->AppendText(sysHisto + "\r\n");
+		textBox2->AppendText(sysHisto);
 	}
 };
 }

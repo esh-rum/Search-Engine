@@ -38,6 +38,8 @@ System::Void database::button1_Click(System::Object^ sender, System::EventArgs^ 
 
 			textBox1->Clear();
 			textBox2->Clear();
+
+			delete doc1; 
 			//MessageBox::Show("Document: " + temp2 + " | " + temp3);
 		}
 		else {
@@ -65,6 +67,11 @@ System::Void database::button2_Click(System::Object^ sender, System::EventArgs^ 
 	String^ docStart = textBox4->Text;
 	String^ docEnd = textBox3->Text;
 
+	if (String::IsNullOrWhiteSpace(docStart) || String::IsNullOrWhiteSpace(docEnd)) {
+		MessageBox::Show("Empty! Type starting and ending document names!");
+		return;
+	}
+
 	std::string stdStart = msclr::interop::marshal_as<std::string>(docStart);
 	std::string stdEnd = msclr::interop::marshal_as<std::string>(docEnd);
 
@@ -79,4 +86,6 @@ System::Void database::button2_Click(System::Object^ sender, System::EventArgs^ 
 
 	textBox3->Clear();
 	textBox4->Clear();
+
+	delete shortPathGraph; 
 }

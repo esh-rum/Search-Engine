@@ -45,7 +45,10 @@ namespace dsaProj {
 			{
 				delete components;
 			}
-			
+
+			delete docuList;
+			delete srForm;
+			//srForm = nullptr;
 		}
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: searchResults^ srForm;
@@ -80,6 +83,7 @@ namespace dsaProj {
 			// 
 			// textBox1
 			// 
+			this->textBox1->BackColor = System::Drawing::Color::White;
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->textBox1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Courier New", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -87,6 +91,7 @@ namespace dsaProj {
 			this->textBox1->Location = System::Drawing::Point(0, 0);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
+			this->textBox1->ReadOnly = true;
 			this->textBox1->Size = System::Drawing::Size(890, 526);
 			this->textBox1->TabIndex = 0;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &srDoc::textBox1_TextChanged);
@@ -167,6 +172,8 @@ namespace dsaProj {
 		System::String^ sysWords = msclr::interop::marshal_as<System::String^>(words);
 		textBox1->AppendText("\r\n" + "\r\n" + sysWords);
 
+		delete doc1;
+		delete hyperGraph; 
 		//std::ifstream infile("E:\\Solved lab tasks\\DS\\dsaProj\\example.txt");
 		//if (infile.is_open()) {
 		//	std::string line;
